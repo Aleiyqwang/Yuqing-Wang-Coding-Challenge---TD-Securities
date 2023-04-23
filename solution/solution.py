@@ -16,9 +16,9 @@ n = 5
 fx_moving = fx_pct.rolling(n).mean()
 print("moving average of the daily percentage change \n", fx_moving.head(10))
 
+
 # 3.	Using a loop, iterate through the list of currency pairs and calculate the average
 # daily percentage change for each pair over the entire dataset. Store the results in a dictionary.
-
 fx_dict = {}
 len_row, len_col = fx.shape
 for i in range(len_col):
@@ -28,12 +28,13 @@ for i in range(len_col):
     fx_dict[fx.columns[i]] = fx_dict[fx.columns[i]]/(len_row - 1)
 print("percentage change for each pair over the entire dataset: \n", pd.DataFrame(fx_dict, index=["avg_change"]))
 
+
 # 4.	Identify the currency pair with the highest average daily percentage change based on the calculated results.
 highest = max(fx_dict, key=fx_dict.get)
 print("The currency pair with the highest average daily percentage change is: ", highest)
 
-# 5.	Plot the time series data for the currency pair identified in step 4.
 
+# 5.	Plot the time series data for the currency pair identified in step 4.
 ser = pd.Series(fx[highest], index=fx.index)
 ser.plot()
 plt.show()
