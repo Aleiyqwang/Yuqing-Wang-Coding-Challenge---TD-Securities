@@ -33,7 +33,7 @@ for i in range(len_col):
 
 # 4.	Identify the currency pair with the highest average daily percentage change based on the calculated results.
 highest = max(fx_dict, key=fx_dict.get)
-#print("The currency pair with the highest average daily percentage change is: ", highest)
+print("The currency pair with the highest average daily percentage change is: ", highest)
 
 # 5.	Plot the time series data for the currency pair identified in step 4.
 
