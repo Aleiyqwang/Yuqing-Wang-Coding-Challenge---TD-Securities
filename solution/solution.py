@@ -29,7 +29,7 @@ for i in range(len_col):
         pct_change = (fx.iloc[j+1, i] - fx.iloc[j, i])/fx.iloc[j, i] * 100
         fx_dict[fx.columns[i]] = fx_dict.get(fx.columns[i], 0) + pct_change
     fx_dict[fx.columns[i]] = fx_dict[fx.columns[i]]/(len_row - 1)
-#print(pd.DataFrame(fx_dict, index=["avg_change"]))
+print(pd.DataFrame(fx_dict, index=["avg_change"]))
 
 # 4.	Identify the currency pair with the highest average daily percentage change based on the calculated results.
 highest = max(fx_dict, key=fx_dict.get)
