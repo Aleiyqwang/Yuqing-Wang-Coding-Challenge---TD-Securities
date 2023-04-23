@@ -1,4 +1,3 @@
-# read the data of Coding Challenge Data.xlsx
 import pandas as pd
 import matplotlib.pyplot as plt
 
